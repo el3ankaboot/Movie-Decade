@@ -7,3 +7,13 @@
 //
 
 import Foundation
+import UIKit
+
+extension UIViewController {
+    //MARK:- Alert
+    func showAlert(title: String, message: String) {
+        let alert = UIAlertController.init(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction.init(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+}
