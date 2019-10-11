@@ -1,5 +1,5 @@
 //
-//  ArrayExtension.swift
+//  VCExtension.swift
 //  Movie Decade
 //
 //  Created by Gamal Gamaleldin on 10/11/19.
