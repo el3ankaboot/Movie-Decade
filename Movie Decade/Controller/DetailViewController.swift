@@ -9,7 +9,7 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    typealias Movie = Response.Movie
     @IBOutlet weak var detailDescriptionLabel: UILabel!
 
 
@@ -17,7 +17,7 @@ class DetailViewController: UIViewController {
         // Update the user interface for the detail item.
         if let detail = detailItem {
             if let label = detailDescriptionLabel {
-                label.text = detail.description
+                label.text = detail.title
             }
         }
     }
@@ -28,7 +28,7 @@ class DetailViewController: UIViewController {
         configureView()
     }
 
-    var detailItem: NSDate? {
+    var detailItem: Movie? {
         didSet {
             // Update the view.
             configureView()
