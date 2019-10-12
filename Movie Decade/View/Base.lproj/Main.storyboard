@@ -217,19 +217,26 @@
                                     </connections>
                                 </collectionReusableView>
                             </collectionView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="GmZ-HJ-Zxm">
+                                <rect key="frame" x="188.5" y="615" width="37" height="37"/>
+                                <color key="color" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="L09-oJ-XsU" firstAttribute="width" secondItem="svH-Pt-448" secondAttribute="width" constant="-32" id="9xv-jF-zfS"/>
                             <constraint firstItem="L09-oJ-XsU" firstAttribute="top" secondItem="VUw-jc-0yf" secondAttribute="top" constant="12" id="AVq-bK-W2S"/>
+                            <constraint firstItem="GmZ-HJ-Zxm" firstAttribute="centerX" secondItem="VUw-jc-0yf" secondAttribute="centerX" id="MMb-5K-bPX"/>
                             <constraint firstItem="VUw-jc-0yf" firstAttribute="bottom" secondItem="L09-oJ-XsU" secondAttribute="bottom" constant="10" id="Rjy-fp-Y5e"/>
                             <constraint firstItem="L09-oJ-XsU" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" constant="16" id="bGx-8q-0QA"/>
+                            <constraint firstItem="GmZ-HJ-Zxm" firstAttribute="centerY" secondItem="VUw-jc-0yf" secondAttribute="centerY" multiplier="4/3" id="eSl-i9-Ht6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VUw-jc-0yf"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
                     <connections>
+                        <outlet property="activity" destination="GmZ-HJ-Zxm" id="Irk-Kj-c2x"/>
                         <outlet property="collectionView" destination="L09-oJ-XsU" id="7NP-jZ-X23"/>
                     </connections>
                 </viewController>

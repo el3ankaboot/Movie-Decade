@@ -16,4 +16,15 @@ extension UIViewController {
         alert.addAction(UIAlertAction.init(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
+    
+    //MARK:- Activity indicator
+    func startAnimating(_ activity: UIActivityIndicatorView){
+        activity.isHidden = false
+        activity.startAnimating()
+    }
+    
+    func stopAnimating(_ activity: UIActivityIndicatorView){
+        activity.isHidden = true
+        activity.stopAnimating()
+    }
 }

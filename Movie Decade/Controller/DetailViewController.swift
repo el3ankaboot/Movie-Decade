@@ -16,6 +16,7 @@ class DetailViewController: UIViewController {
     
     //MARK:- Outlets
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var activity: UIActivityIndicatorView!
     
     //MARK:- Instance Variables
     var movie: Movie?
@@ -31,6 +32,7 @@ class DetailViewController: UIViewController {
     //MARK: ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        startAnimating(activity)
         configureCollectionView()
         getImagesURLS()
     }
@@ -60,6 +62,7 @@ class DetailViewController: UIViewController {
                 return
             }
             self.imagesURLs = urls
+            self.stopAnimating(self.activity)
             self.collectionView.reloadData()
         }
     }
