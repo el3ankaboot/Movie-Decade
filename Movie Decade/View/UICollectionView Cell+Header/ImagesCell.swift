@@ -17,7 +17,6 @@ class ImagesCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         shimmer = FBShimmeringView(frame: self.frame)
-        shimmer.layer.cornerRadius = 5.0
         self.contentView.addSubview(shimmer)
         shimmer.contentView = imageView
         shimmer.isShimmering = true

@@ -64,13 +64,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="157" height="181"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IcU-T8-VIs">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IcU-T8-VIs">
                                                     <rect key="frame" x="0.0" y="0.0" width="157" height="181"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="IcU-T8-VIs" secondAttribute="bottom" id="8jg-O5-ff6"/>
+                                            <constraint firstItem="IcU-T8-VIs" firstAttribute="leading" secondItem="ifd-8g-fsF" secondAttribute="leading" id="LKu-gW-7xR"/>
+                                            <constraint firstItem="IcU-T8-VIs" firstAttribute="top" secondItem="ifd-8g-fsF" secondAttribute="top" id="QdY-er-JxA"/>
+                                            <constraint firstAttribute="trailing" secondItem="IcU-T8-VIs" secondAttribute="trailing" id="chZ-aV-YH4"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="imageView" destination="IcU-T8-VIs" id="mH9-uq-Xrc"/>
                                         </connections>

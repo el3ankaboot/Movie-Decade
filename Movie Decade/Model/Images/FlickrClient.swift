@@ -32,7 +32,8 @@ class FlickrClient {
         }
     }//Closing of enum
     
-    class func downloadImages (movieTitle:String, completion: @escaping ([ImageUrl]? , String) -> Void){
+    class func getImagesURLs (movieTitle:String, completion: @escaping ([ImageUrl]? , String) -> Void){
+        print(Endpoints.search(movieTitle).url)
         Alamofire.request(Endpoints.search(movieTitle).url, method: .get, encoding: JSONEncoding.default, headers: [:])
             .responseJSON { response in
                 switch response.result {
@@ -69,6 +70,22 @@ class FlickrClient {
                     }
                     
                 }
+        }
+    }//Closing of getImagesURLs Func
+    
+    class func images(imageUrlString: ImageUrl, imageView: UIImageView , shimmer: FBShimmering) {
+        
+        let imageURL = URL(string: imageUrlString.getURL())
+        DispatchQueue.global().async {() in
+            if let data = try? Data(contentsOf: imageURL!) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        imageView.image = image
+                        shimmer.isShimmering = false
+                        
+                    }
+                }
+            }
         }
         
     }

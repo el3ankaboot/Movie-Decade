@@ -22,6 +22,8 @@ class DetailViewController: UIViewController {
     var movieGenres : [String]?
     var movieCast : [String]?
     var headerView: ImagesTopCollectionReusableView!
+    var imagesURLs : [ImageUrl]?
+    var load = true
     var heightOfGenreCast = CGFloat(50.0)
 
     
@@ -30,6 +32,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
+        getImagesURLS()
     }
 
     //MARK:- Configuring the view
@@ -46,6 +49,18 @@ class DetailViewController: UIViewController {
             movieGenres = movie.genres
 
             self.movieCast = movie.cast
+        }
+    }
+    
+    //MARK:- Getting The Images URLs
+    func getImagesURLS() {
+        FlickrClient.getImagesURLs(movieTitle: movie!.title) { (urls, err) in
+            guard let urls = urls else {
+                self.showAlert(title: "Failed To Retrieve Images", message: "")
+                return
+            }
+            self.imagesURLs = urls
+            self.collectionView.reloadData()
         }
     }
 }//Closing of class
@@ -115,16 +130,18 @@ extension DetailViewController : UICollectionViewDelegate , UICollectionViewData
         collectionView.delegate = self
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return imagesURLs?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! ImagesCell
+        cell.imageView.image = nil
         cell.shimmer.isShimmering = true
-        cell.layer.cornerRadius = 5.0
         
         return cell
     }
+    
+    //Displaying 2 cells in a row.
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let noOfCellsInRow = 2
         let size = Int((collectionView.bounds.width - 25) / CGFloat(noOfCellsInRow))
@@ -147,9 +164,12 @@ extension DetailViewController : UICollectionViewDelegate , UICollectionViewData
                 else {
                     fatalError("Invalid view type")
             }
-            self.headerView = headerView
-            configureView()
-            configureGenresCast()
+            if(load){
+                self.headerView = headerView
+                configureView()
+                configureGenresCast()
+                load = false
+            }
             return headerView
         default: print("Not Valid")
         }
