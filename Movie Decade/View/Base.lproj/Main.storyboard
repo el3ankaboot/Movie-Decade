@@ -47,135 +47,175 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="WRZ-fv-fju">
-                                <rect key="frame" x="10" y="112" width="394" height="77.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyM-D1-Bjj">
-                                        <rect key="frame" x="155.5" y="0.0" width="83.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="61L-dk-vfk">
-                                        <rect key="frame" x="137" y="32.5" width="120" height="45"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fIn-Bq-jDM" customClass="CosmosView" customModule="Cosmos">
-                                                <rect key="frame" x="0.0" y="0.0" width="120" height="20.5"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="rating">
-                                                        <real key="value" value="4"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
-                                                        <integer key="value" value="5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
-                                                        <color key="value" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
-                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
-                                                        <color key="value" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="emptyBorderWidth">
-                                                        <real key="value" value="1"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
-                                                        <color key="value" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="filledBorderWidth">
-                                                        <real key="value" value="1"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2009" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vlI-nf-7Z8">
-                                                <rect key="frame" x="39.5" y="24.5" width="41" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genres" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PzW-CT-Kos">
-                                <rect key="frame" x="16" y="205.5" width="66" height="25.5"/>
-                                <fontDescription key="fontDescription" name="Nunito-ExtraBold" family="Nunito" pointSize="20"/>
-                                <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K6j-Fa-JZh">
-                                <rect key="frame" x="16" y="239" width="382" height="50"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="L09-oJ-XsU">
+                                <rect key="frame" x="16" y="100" width="382" height="752"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="6Go-R2-rXB"/>
-                                </constraints>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="CdW-VR-5Ff">
-                                        <rect key="frame" x="0.0" y="28" width="382" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CdW-VR-5Ff" id="Wrf-Nd-ghK">
-                                            <rect key="frame" x="0.0" y="0.0" width="382" height="43.5"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dgU-qL-YVM">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="50" height="250"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="ifd-8g-fsF">
+                                        <rect key="frame" x="0.0" y="258" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cast" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yJ9-1V-fK6">
-                                <rect key="frame" x="16" y="299" width="42" height="25.5"/>
-                                <fontDescription key="fontDescription" name="Nunito-ExtraBold" family="Nunito" pointSize="20"/>
-                                <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WCD-E9-nQC">
-                                <rect key="frame" x="16" y="334.5" width="382" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="jmu-YP-p8I"/>
-                                </constraints>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="pV4-5N-v8O">
-                                        <rect key="frame" x="0.0" y="28" width="382" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pV4-5N-v8O" id="OeR-ed-myG">
-                                            <rect key="frame" x="0.0" y="0.0" width="382" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="JEX-9P-axG" id="3ZX-La-uiG"/>
-                                    <outlet property="delegate" destination="JEX-9P-axG" id="bOb-5z-v55"/>
-                                </connections>
-                            </tableView>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="headerView" id="P3T-Ai-mnN" customClass="ImagesTopCollectionReusableView" customModule="Movie_Decade" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="382" height="250"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="WRZ-fv-fju" userLabel="Basic Info Stack View">
+                                            <rect key="frame" x="130.5" y="0.0" width="121" height="75"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyM-D1-Bjj">
+                                                    <rect key="frame" x="19" y="0.0" width="83.5" height="19"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="19" id="i7A-XN-M1s"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="61L-dk-vfk" userLabel="Rate Year Stack View">
+                                                    <rect key="frame" x="0.0" y="31" width="121" height="44"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fIn-Bq-jDM" customClass="CosmosView" customModule="Cosmos">
+                                                            <rect key="frame" x="0.0" y="0.0" width="121" height="20"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                                    <real key="value" value="4"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                                                    <integer key="value" value="5"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                                                    <color key="value" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                                                    <color key="value" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="emptyBorderWidth">
+                                                                    <real key="value" value="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
+                                                                    <color key="value" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="filledBorderWidth">
+                                                                    <real key="value" value="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2009" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vlI-nf-7Z8">
+                                                            <rect key="frame" x="40" y="24" width="41" height="20"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="vlI-nf-7Z8" firstAttribute="leading" secondItem="61L-dk-vfk" secondAttribute="leading" constant="40" id="n8l-mz-wJb"/>
+                                                        <constraint firstItem="fIn-Bq-jDM" firstAttribute="leading" secondItem="61L-dk-vfk" secondAttribute="leading" id="uRy-hv-W6J"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="61L-dk-vfk" firstAttribute="leading" secondItem="WRZ-fv-fju" secondAttribute="leading" id="DRd-N5-6eH"/>
+                                            </constraints>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nRc-Bm-88g" userLabel="Genres Cast Stack View">
+                                            <rect key="frame" x="0.0" y="91" width="382" height="159"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Osc-gl-p5Z" userLabel="Genres Stack View">
+                                                    <rect key="frame" x="0.0" y="0.0" width="382" height="75.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genres" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PzW-CT-Kos">
+                                                            <rect key="frame" x="0.0" y="0.0" width="66" height="17.5"/>
+                                                            <fontDescription key="fontDescription" name="Nunito-ExtraBold" family="Nunito" pointSize="20"/>
+                                                            <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2pq-P6-QYK">
+                                                            <rect key="frame" x="0.0" y="25.5" width="382" height="50"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="50" id="bSj-yg-NZd"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="2pq-P6-QYK" firstAttribute="width" secondItem="Osc-gl-p5Z" secondAttribute="width" id="nFH-sN-eG2"/>
+                                                    </constraints>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="lME-hF-u4d" userLabel="Cast Stack View">
+                                                    <rect key="frame" x="0.0" y="83.5" width="382" height="75.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cast" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yJ9-1V-fK6">
+                                                            <rect key="frame" x="0.0" y="0.0" width="42" height="25.5"/>
+                                                            <fontDescription key="fontDescription" name="Nunito-ExtraBold" family="Nunito" pointSize="20"/>
+                                                            <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1GA-RK-AZt">
+                                                            <rect key="frame" x="0.0" y="25.5" width="382" height="50"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="50" id="JGn-Tb-6f5"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="1GA-RK-AZt" firstAttribute="width" secondItem="lME-hF-u4d" secondAttribute="width" id="Brj-HI-EDO"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Osc-gl-p5Z" firstAttribute="width" secondItem="nRc-Bm-88g" secondAttribute="width" id="Fmw-ov-dx1"/>
+                                                <constraint firstItem="lME-hF-u4d" firstAttribute="width" secondItem="Osc-gl-p5Z" secondAttribute="width" id="aLX-Ae-1Bj"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="nRc-Bm-88g" firstAttribute="leading" secondItem="P3T-Ai-mnN" secondAttribute="leading" id="56Q-Y4-nra"/>
+                                        <constraint firstItem="WRZ-fv-fju" firstAttribute="centerX" secondItem="P3T-Ai-mnN" secondAttribute="centerX" id="EwZ-M0-Omp"/>
+                                        <constraint firstAttribute="bottom" secondItem="nRc-Bm-88g" secondAttribute="bottom" id="GVt-eT-h6a"/>
+                                        <constraint firstItem="WRZ-fv-fju" firstAttribute="bottom" secondItem="nRc-Bm-88g" secondAttribute="top" constant="-16" id="bve-HY-SBC"/>
+                                        <constraint firstItem="nRc-Bm-88g" firstAttribute="width" secondItem="P3T-Ai-mnN" secondAttribute="width" id="keN-gd-gme"/>
+                                        <constraint firstItem="WRZ-fv-fju" firstAttribute="top" secondItem="P3T-Ai-mnN" secondAttribute="top" id="pr3-SP-M83"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="castView" destination="1GA-RK-AZt" id="MCW-1Y-wN2"/>
+                                        <outlet property="castViewHeight" destination="JGn-Tb-6f5" id="Byx-TJ-pXF"/>
+                                        <outlet property="genresView" destination="2pq-P6-QYK" id="P0t-O6-bfA"/>
+                                        <outlet property="genresViewHeight" destination="nFH-sN-eG2" id="aQn-4L-MiX"/>
+                                        <outlet property="movieRating" destination="fIn-Bq-jDM" id="sdk-EM-ky9"/>
+                                        <outlet property="movieTitle" destination="uyM-D1-Bjj" id="tj5-X0-Sbg"/>
+                                        <outlet property="movieYear" destination="vlI-nf-7Z8" id="eH0-h7-4jb"/>
+                                    </connections>
+                                </collectionReusableView>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="K6j-Fa-JZh" firstAttribute="leading" secondItem="PzW-CT-Kos" secondAttribute="leading" id="9Wy-6A-91T"/>
-                            <constraint firstItem="K6j-Fa-JZh" firstAttribute="top" secondItem="PzW-CT-Kos" secondAttribute="bottom" constant="8" id="9zl-Bm-1zC"/>
-                            <constraint firstItem="WRZ-fv-fju" firstAttribute="centerX" secondItem="VUw-jc-0yf" secondAttribute="centerX" id="APd-dt-Afc"/>
-                            <constraint firstItem="yJ9-1V-fK6" firstAttribute="top" secondItem="K6j-Fa-JZh" secondAttribute="bottom" constant="10" id="F4J-3d-Fis"/>
-                            <constraint firstItem="WCD-E9-nQC" firstAttribute="leading" secondItem="yJ9-1V-fK6" secondAttribute="leading" id="S2s-gQ-8Mg"/>
-                            <constraint firstItem="WCD-E9-nQC" firstAttribute="width" secondItem="svH-Pt-448" secondAttribute="width" constant="-32" id="SfI-Q2-hIm"/>
-                            <constraint firstItem="PzW-CT-Kos" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" constant="16" id="bBD-Z7-VhS"/>
-                            <constraint firstItem="WRZ-fv-fju" firstAttribute="top" secondItem="VUw-jc-0yf" secondAttribute="top" constant="24" id="bqe-Z0-t5u"/>
-                            <constraint firstItem="yJ9-1V-fK6" firstAttribute="leading" secondItem="PzW-CT-Kos" secondAttribute="leading" id="d1p-au-oQ3"/>
-                            <constraint firstItem="PzW-CT-Kos" firstAttribute="top" secondItem="WRZ-fv-fju" secondAttribute="bottom" constant="16" id="kDh-8I-y7T"/>
-                            <constraint firstItem="K6j-Fa-JZh" firstAttribute="width" secondItem="svH-Pt-448" secondAttribute="width" constant="-32" id="m82-Im-3c0"/>
-                            <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="WRZ-fv-fju" secondAttribute="trailing" constant="10" id="wqL-ft-3CJ"/>
-                            <constraint firstItem="WCD-E9-nQC" firstAttribute="top" secondItem="yJ9-1V-fK6" secondAttribute="bottom" constant="10" id="z1s-DK-k9I"/>
+                            <constraint firstItem="L09-oJ-XsU" firstAttribute="width" secondItem="svH-Pt-448" secondAttribute="width" constant="-32" id="9xv-jF-zfS"/>
+                            <constraint firstItem="L09-oJ-XsU" firstAttribute="top" secondItem="VUw-jc-0yf" secondAttribute="top" constant="12" id="AVq-bK-W2S"/>
+                            <constraint firstItem="VUw-jc-0yf" firstAttribute="bottom" secondItem="L09-oJ-XsU" secondAttribute="bottom" constant="10" id="Rjy-fp-Y5e"/>
+                            <constraint firstItem="L09-oJ-XsU" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" constant="16" id="bGx-8q-0QA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VUw-jc-0yf"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
                     <connections>
-                        <outlet property="castTableView" destination="WCD-E9-nQC" id="kRX-gJ-8cJ"/>
-                        <outlet property="genresTableView" destination="K6j-Fa-JZh" id="d53-o8-nyD"/>
-                        <outlet property="movieRating" destination="fIn-Bq-jDM" id="oza-rK-8Qz"/>
-                        <outlet property="movieTitle" destination="uyM-D1-Bjj" id="GxW-Ua-7tE"/>
-                        <outlet property="movieYear" destination="vlI-nf-7Z8" id="bfx-4C-Lb7"/>
+                        <outlet property="collectionView" destination="L09-oJ-XsU" id="7NP-jZ-X23"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
