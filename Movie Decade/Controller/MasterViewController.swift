@@ -93,12 +93,13 @@ extension MasterViewController {
         }
         return cell
     }
-    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
     //Setup table view
     func setupTableView(){
         tableView.keyboardDismissMode = .onDrag
         tableView.tableFooterView = UIView()
-        tableView.rowHeight = 60
     }
     
     //Scroll to bottom of the table

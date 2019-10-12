@@ -1,16 +1,20 @@
 PODS:
+  - ASHorizontalScrollView (1.5.2)
   - Cosmos (20.0.1)
 
 DEPENDENCIES:
+  - ASHorizontalScrollView (~> 1.5.2)
   - Cosmos (~> 20.0)
 
 SPEC REPOS:
   trunk:
+    - ASHorizontalScrollView
     - Cosmos
 
 SPEC CHECKSUMS:
+  ASHorizontalScrollView: b84b60fa1ce2088d569e5faa8379846c143c824d
   Cosmos: b47fddf2102bb48580cd3025d9ce0a5c658a65da
 
-PODFILE CHECKSUM: d21490f4071c2861d14282a98289ae2be89fd4bd
+PODFILE CHECKSUM: 95ac95128daeddf7c59e4219a8f144a793f39a9b
 
 COCOAPODS: 1.8.3

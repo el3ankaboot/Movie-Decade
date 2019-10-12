@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-ExtraBold.ttf">
+            <string>Nunito-ExtraBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Master-->
         <scene sceneID="pY4-Hu-kfo">
@@ -94,25 +99,80 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PzW-CT-Kos">
-                                <rect key="frame" x="20" y="228" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genres" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PzW-CT-Kos">
+                                <rect key="frame" x="16" y="205.5" width="66" height="25.5"/>
+                                <fontDescription key="fontDescription" name="Nunito-ExtraBold" family="Nunito" pointSize="20"/>
+                                <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K6j-Fa-JZh">
+                                <rect key="frame" x="16" y="239" width="382" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="6Go-R2-rXB"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="CdW-VR-5Ff">
+                                        <rect key="frame" x="0.0" y="28" width="382" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CdW-VR-5Ff" id="Wrf-Nd-ghK">
+                                            <rect key="frame" x="0.0" y="0.0" width="382" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cast" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yJ9-1V-fK6">
+                                <rect key="frame" x="16" y="299" width="42" height="25.5"/>
+                                <fontDescription key="fontDescription" name="Nunito-ExtraBold" family="Nunito" pointSize="20"/>
+                                <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WCD-E9-nQC">
+                                <rect key="frame" x="16" y="334.5" width="382" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="jmu-YP-p8I"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="pV4-5N-v8O">
+                                        <rect key="frame" x="0.0" y="28" width="382" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pV4-5N-v8O" id="OeR-ed-myG">
+                                            <rect key="frame" x="0.0" y="0.0" width="382" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="JEX-9P-axG" id="3ZX-La-uiG"/>
+                                    <outlet property="delegate" destination="JEX-9P-axG" id="bOb-5z-v55"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="K6j-Fa-JZh" firstAttribute="leading" secondItem="PzW-CT-Kos" secondAttribute="leading" id="9Wy-6A-91T"/>
+                            <constraint firstItem="K6j-Fa-JZh" firstAttribute="top" secondItem="PzW-CT-Kos" secondAttribute="bottom" constant="8" id="9zl-Bm-1zC"/>
                             <constraint firstItem="WRZ-fv-fju" firstAttribute="centerX" secondItem="VUw-jc-0yf" secondAttribute="centerX" id="APd-dt-Afc"/>
+                            <constraint firstItem="yJ9-1V-fK6" firstAttribute="top" secondItem="K6j-Fa-JZh" secondAttribute="bottom" constant="10" id="F4J-3d-Fis"/>
+                            <constraint firstItem="WCD-E9-nQC" firstAttribute="leading" secondItem="yJ9-1V-fK6" secondAttribute="leading" id="S2s-gQ-8Mg"/>
+                            <constraint firstItem="WCD-E9-nQC" firstAttribute="width" secondItem="svH-Pt-448" secondAttribute="width" constant="-32" id="SfI-Q2-hIm"/>
+                            <constraint firstItem="PzW-CT-Kos" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" constant="16" id="bBD-Z7-VhS"/>
                             <constraint firstItem="WRZ-fv-fju" firstAttribute="top" secondItem="VUw-jc-0yf" secondAttribute="top" constant="24" id="bqe-Z0-t5u"/>
+                            <constraint firstItem="yJ9-1V-fK6" firstAttribute="leading" secondItem="PzW-CT-Kos" secondAttribute="leading" id="d1p-au-oQ3"/>
+                            <constraint firstItem="PzW-CT-Kos" firstAttribute="top" secondItem="WRZ-fv-fju" secondAttribute="bottom" constant="16" id="kDh-8I-y7T"/>
+                            <constraint firstItem="K6j-Fa-JZh" firstAttribute="width" secondItem="svH-Pt-448" secondAttribute="width" constant="-32" id="m82-Im-3c0"/>
                             <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="WRZ-fv-fju" secondAttribute="trailing" constant="10" id="wqL-ft-3CJ"/>
+                            <constraint firstItem="WCD-E9-nQC" firstAttribute="top" secondItem="yJ9-1V-fK6" secondAttribute="bottom" constant="10" id="z1s-DK-k9I"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VUw-jc-0yf"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
                     <connections>
+                        <outlet property="castTableView" destination="WCD-E9-nQC" id="kRX-gJ-8cJ"/>
+                        <outlet property="genresTableView" destination="K6j-Fa-JZh" id="d53-o8-nyD"/>
                         <outlet property="movieRating" destination="fIn-Bq-jDM" id="oza-rK-8Qz"/>
                         <outlet property="movieTitle" destination="uyM-D1-Bjj" id="GxW-Ua-7tE"/>
                         <outlet property="movieYear" destination="vlI-nf-7Z8" id="bfx-4C-Lb7"/>
