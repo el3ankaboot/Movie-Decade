@@ -18,5 +18,4 @@ class ImagesTopCollectionReusableView: UICollectionReusableView {
     @IBOutlet weak var genresViewHeight: NSLayoutConstraint!
     @IBOutlet weak var castViewHeight: NSLayoutConstraint!
     
-    
 }
