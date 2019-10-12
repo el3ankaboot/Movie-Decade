@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3EAA139B520473E0936DEC86 /* Pods_Movie_Decade.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D804C1C1F11C6BC035A2BC9B /* Pods_Movie_Decade.framework */; };
 		5E09BA722350A31500724E72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E09BA712350A31500724E72 /* AppDelegate.swift */; };
 		5E09BA742350A31500724E72 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E09BA732350A31500724E72 /* MasterViewController.swift */; };
 		5E09BA762350A31500724E72 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E09BA752350A31500724E72 /* DetailViewController.swift */; };
@@ -62,6 +63,9 @@
 		5E09BAA72350DB8200724E72 /* Nunito-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraLight.ttf"; sourceTree = "<group>"; };
 		5E09BAA82350DB8200724E72 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		5E09BAA92350DB8200724E72 /* nunito.regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = nunito.regular.ttf; sourceTree = "<group>"; };
+		7ACEF289C9120E05EEE57A81 /* Pods-Movie Decade.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movie Decade.release.xcconfig"; path = "Target Support Files/Pods-Movie Decade/Pods-Movie Decade.release.xcconfig"; sourceTree = "<group>"; };
+		7B48FC09E0772B029FC7C248 /* Pods-Movie Decade.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movie Decade.debug.xcconfig"; path = "Target Support Files/Pods-Movie Decade/Pods-Movie Decade.debug.xcconfig"; sourceTree = "<group>"; };
+		D804C1C1F11C6BC035A2BC9B /* Pods_Movie_Decade.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Movie_Decade.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EAA139B520473E0936DEC86 /* Pods_Movie_Decade.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,14 +87,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		125CD6C66CA39E9400FAD2B9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7B48FC09E0772B029FC7C248 /* Pods-Movie Decade.debug.xcconfig */,
+				7ACEF289C9120E05EEE57A81 /* Pods-Movie Decade.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		5E09BA652350A31500724E72 = {
 			isa = PBXGroup;
 			children = (
 				5E09BA702350A31500724E72 /* Movie Decade */,
-				5E09BA9B2350C63F00724E72 /* Extensions+Helpers */,
-				5E09BA982350B5B000724E72 /* JSON */,
 				5E09BA872350A31800724E72 /* Movie DecadeTests */,
 				5E09BA6F2350A31500724E72 /* Products */,
+				125CD6C66CA39E9400FAD2B9 /* Pods */,
+				C942B527C9277EBD141B56DC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +123,8 @@
 				5E09BA932350B4BB00724E72 /* Model */,
 				5E09BA942350B4C100724E72 /* View */,
 				5E09BA952350B4C600724E72 /* Controller */,
+				5E09BA9B2350C63F00724E72 /* Extensions+Helpers */,
+				5E09BA982350B5B000724E72 /* JSON */,
 			);
 			path = "Movie Decade";
 			sourceTree = "<group>";
@@ -183,6 +199,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		C942B527C9277EBD141B56DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D804C1C1F11C6BC035A2BC9B /* Pods_Movie_Decade.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -190,9 +214,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E09BA8D2350A31800724E72 /* Build configuration list for PBXNativeTarget "Movie Decade" */;
 			buildPhases = (
+				EB7924FA86D9E5F51509C4ED /* [CP] Check Pods Manifest.lock */,
 				5E09BA6A2350A31500724E72 /* Sources */,
 				5E09BA6B2350A31500724E72 /* Frameworks */,
 				5E09BA6C2350A31500724E72 /* Resources */,
+				31C273EF16043B9565934F9F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -288,6 +314,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		31C273EF16043B9565934F9F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Movie Decade/Pods-Movie Decade-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Movie Decade/Pods-Movie Decade-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Movie Decade/Pods-Movie Decade-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB7924FA86D9E5F51509C4ED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Movie Decade-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5E09BA6A2350A31500724E72 /* Sources */ = {
@@ -391,7 +459,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -446,7 +514,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -458,6 +526,7 @@
 		};
 		5E09BA8E2350A31800724E72 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B48FC09E0772B029FC7C248 /* Pods-Movie Decade.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -477,6 +546,7 @@
 		};
 		5E09BA8F2350A31800724E72 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7ACEF289C9120E05EEE57A81 /* Pods-Movie Decade.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

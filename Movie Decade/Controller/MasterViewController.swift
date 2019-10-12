@@ -33,6 +33,7 @@ class MasterViewController: UITableViewController {
         setupSearchBar()
         //Setting the view of the table
         setupTableView()
+        addBottomButton()
 
     }
     
@@ -49,13 +50,16 @@ class MasterViewController: UITableViewController {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let movie = (search) ? moviesSearched[indexPath.row] : moviesArray[indexPath.row]
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-                controller.detailItem = movie
+                controller.movie = movie
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
     }
 
+    func addBottomButton() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Bottom", style: .plain, target: self, action: #selector(scrollToBottom))
+    }
 
 }//Closing of class
 
@@ -78,7 +82,15 @@ extension MasterViewController {
         let movie = (search) ? moviesSearched[indexPath.row] : moviesArray[indexPath.row]
         cell.textLabel!.text = movie.title
         cell.textLabel?.font = UIFont(name:"Nunito-Bold", size: 18)
-        cell.textLabel?.textColor = UIColor(red:0.50, green:0.00, blue:0.50, alpha:1.0)
+        cell.textLabel?.adjustsFontSizeToFitWidth = true
+        if(indexPath.row % 2 == 0 ){
+            cell.backgroundColor = UIColor(red:1.0, green:1.0, blue:1.0, alpha:1.0)
+            cell.textLabel?.textColor = UIColor(red:0.50, green:0.00, blue:0.50, alpha:1.0)
+        }
+        else {
+            cell.backgroundColor = UIColor(red:0.50, green:0.0, blue:0.5, alpha:0.7)
+            cell.textLabel?.textColor = UIColor(red:1.0, green:1.0, blue:1.0, alpha:1.0)
+        }
         return cell
     }
     
@@ -87,7 +99,12 @@ extension MasterViewController {
         tableView.keyboardDismissMode = .onDrag
         tableView.tableFooterView = UIView()
         tableView.rowHeight = 60
-        
+    }
+    
+    //Scroll to bottom of the table
+    @objc func scrollToBottom(){
+            let indexPath = IndexPath(row: self.moviesArray.count-1, section: 0)
+            self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
 }
 
@@ -99,12 +116,12 @@ extension MasterViewController : UISearchBarDelegate {
         searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 44))
         searchBar.delegate = self
         self.tableView.tableHeaderView = searchBar
-        searchBar.placeholder = "Search for movie by year"
         searchBar.keyboardType = .numberPad
         addDoneButtonOnKeyboard()
-        searchBar.barTintColor = UIColor(red:0.50, green:0.00, blue:0.50, alpha:1.0)
+        searchBar.barTintColor = UIColor(red:0.50, green:0.00, blue:0.50, alpha:0.9)
         var textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField
         textFieldInsideSearchBar?.textColor = UIColor(red:0.50, green:0.00, blue:0.50, alpha:1.0)
+        textFieldInsideSearchBar?.attributedPlaceholder = NSAttributedString(string:  "Search for movie by year",attributes: [NSAttributedString.Key.foregroundColor: UIColor(red:0.50, green:0.0, blue:0.5, alpha:0.5)])
     }
     
     //MARK: Adding toolbar with "Search" and "Cancel" to the numberpad to search.
@@ -126,7 +143,7 @@ extension MasterViewController : UISearchBarDelegate {
     @objc func doneButtonAction(){
         let stringToIntYear = Int(searchBar?.text ?? "0") ?? 0
         guard isValidYear(year: stringToIntYear) else {
-            showAlert(title: "Invalid Year", message: "Please enter a valid year")
+            showAlert(title: "Invalid Year", message: "Please enter a year from 2009 till 2018 ")
             return
         }
         handleSearch(stringToIntYear)
@@ -144,6 +161,7 @@ extension MasterViewController : UISearchBarDelegate {
             search = true
             tableView.reloadData()
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Show All Movies", style: .plain, target: self, action: #selector(showAllMovies))
+            navigationItem.leftBarButtonItem = nil
         }
         else {
             showAlert(title: "No movies found.", message: "No movies found for the year \(year)")
@@ -160,6 +178,7 @@ extension MasterViewController : UISearchBarDelegate {
         tableView.reloadData()
         searchBar.text = ""
         navigationItem.rightBarButtonItem = nil
+        addBottomButton()
     }
     
 }

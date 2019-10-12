@@ -7,33 +7,42 @@
 //
 
 import UIKit
+import Cosmos
 
 class DetailViewController: UIViewController {
+    //Typealiasing Reponse.Movie as Movie
     typealias Movie = Response.Movie
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
-
-
-    func configureView() {
-        // Update the user interface for the detail item.
-        if let detail = detailItem {
-            if let label = detailDescriptionLabel {
-                label.text = detail.title
-            }
-        }
-    }
-
+    
+    //MARK:- Outlets
+    @IBOutlet weak var movieTitle: UILabel!
+    @IBOutlet weak var movieRating: CosmosView!
+    @IBOutlet weak var movieYear: UILabel!
+    
+    //MARK:- Instance Variables
+    var movie: Movie?
+    
+    //MARK:- Overriding swift methods
+    //MARK: ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        movieRating.isUserInteractionEnabled = false
         configureView()
     }
 
-    var detailItem: Movie? {
-        didSet {
-            // Update the view.
-            configureView()
+    //MARK:- Configuring the view
+    func configureView() {
+        movieTitle.font = UIFont(name:"Nunito-Black", size: 18)
+        movieTitle.adjustsFontSizeToFitWidth = true
+        movieYear.font = UIFont(name:"Nunito-Bold", size: 16)
+        movieYear.textColor = UIColor(red:0.50, green:0.00, blue:0.50, alpha:1.0)
+        if let movie = movie {
+            movieTitle.text = movie.title
+            movieRating.rating = Double(movie.rating)
+            movieYear.text = String(movie.year)
         }
     }
+
+
 
 
 }
