@@ -51,7 +51,6 @@ class DetailViewController: UIViewController {
             self.movieGenres = movie.genres
             self.genresTableView.reloadData()
             self.movieCast = movie.cast
-            
         }
     }
 }//Closing of class
