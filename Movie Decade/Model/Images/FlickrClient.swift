@@ -63,6 +63,9 @@ class FlickrClient {
                             returnCount += 1
                             if returnCount == photo.count {completion(imageURLs ,"")}
                         }
+                        if photo.count == 0{
+                            completion([],"Empty")
+                        }
                         
                         
                     default :

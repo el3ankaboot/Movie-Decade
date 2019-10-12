@@ -145,10 +145,14 @@ extension DetailViewController : UICollectionViewDelegate , UICollectionViewData
         return cell
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        collectionView.reloadData()
+    }
+    
     //Displaying 2 cells in a row.
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let noOfCellsInRow = 2
-        let size = Int((collectionView.bounds.width - 25) / CGFloat(noOfCellsInRow))
+        var size = Int((collectionView.bounds.width - 25) / CGFloat(noOfCellsInRow))
         return CGSize(width: size, height: 150)
     }
     

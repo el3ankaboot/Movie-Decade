@@ -134,7 +134,6 @@
 				5E09BA942350B4C100724E72 /* View */,
 				5E09BA952350B4C600724E72 /* Controller */,
 				5E09BA9B2350C63F00724E72 /* Extensions+Helpers */,
-				5E09BA982350B5B000724E72 /* JSON */,
 			);
 			path = "Movie Decade";
 			sourceTree = "<group>";
@@ -189,6 +188,7 @@
 		5E09BA9B2350C63F00724E72 /* Extensions+Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				5E09BA982350B5B000724E72 /* JSON */,
 				5E09BAA02350DB5A00724E72 /* Fonts */,
 				5E09BA9E2350D3F500724E72 /* VCExtension.swift */,
 			);
