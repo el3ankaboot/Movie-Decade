@@ -73,15 +73,17 @@ class FlickrClient {
         }
     }//Closing of getImagesURLs Func
     
-    class func images(imageUrlString: ImageUrl, imageView: UIImageView , shimmer: FBShimmering) {
-        
+    class func images(imageUrlString: ImageUrl?, cell: ImagesCell ) {
+        guard let imageUrlString = imageUrlString else {
+            return
+        }
         let imageURL = URL(string: imageUrlString.getURL())
         DispatchQueue.global().async {() in
             if let data = try? Data(contentsOf: imageURL!) {
                 if let image = UIImage(data: data) {
                     DispatchQueue.main.async {
-                        imageView.image = image
-                        shimmer.isShimmering = false
+                        cell.imageView.image = image
+                        cell.shimmer.isShimmering = false
                         
                     }
                 }

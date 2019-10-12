@@ -135,9 +135,10 @@ extension DetailViewController : UICollectionViewDelegate , UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! ImagesCell
+        let imageUrl = imagesURLs?[indexPath.row]
         cell.imageView.image = nil
         cell.shimmer.isShimmering = true
-        
+        FlickrClient.images(imageUrlString: imageUrl, cell: cell)
         return cell
     }
     
