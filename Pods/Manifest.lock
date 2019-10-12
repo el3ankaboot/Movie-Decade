@@ -2,12 +2,14 @@ PODS:
   - Alamofire (4.9.0)
   - ASHorizontalScrollView (1.5.2)
   - Cosmos (20.0.1)
+  - Shimmer (1.0.2)
   - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.8)
   - ASHorizontalScrollView (~> 1.5.2)
   - Cosmos (~> 20.0)
+  - Shimmer
   - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
@@ -15,14 +17,16 @@ SPEC REPOS:
     - Alamofire
     - ASHorizontalScrollView
     - Cosmos
+    - Shimmer
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
   ASHorizontalScrollView: b84b60fa1ce2088d569e5faa8379846c143c824d
   Cosmos: b47fddf2102bb48580cd3025d9ce0a5c658a65da
+  Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: e9161efe711975be4723892a1d8b765270ef35c0
+PODFILE CHECKSUM: 51cfd919a7ba673428764461ba237a08fc55da23
 
 COCOAPODS: 1.8.3

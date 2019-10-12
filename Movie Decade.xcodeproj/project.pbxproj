@@ -30,6 +30,7 @@
 		5E09BAB6235222E600724E72 /* FlickrClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E09BAB5235222E600724E72 /* FlickrClient.swift */; };
 		5E09BAB82352256700724E72 /* ImageUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E09BAB72352256700724E72 /* ImageUrl.swift */; };
 		5E09BABD23524AD800724E72 /* ImagesTopCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E09BABC23524AD800724E72 /* ImagesTopCollectionReusableView.swift */; };
+		5E09BABF23525A2300724E72 /* ImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E09BABE23525A2300724E72 /* ImagesCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		5E09BAB5235222E600724E72 /* FlickrClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrClient.swift; sourceTree = "<group>"; };
 		5E09BAB72352256700724E72 /* ImageUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUrl.swift; sourceTree = "<group>"; };
 		5E09BABC23524AD800724E72 /* ImagesTopCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesTopCollectionReusableView.swift; sourceTree = "<group>"; };
+		5E09BABE23525A2300724E72 /* ImagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesCell.swift; sourceTree = "<group>"; };
+		5E09BAC023525AC100724E72 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		7ACEF289C9120E05EEE57A81 /* Pods-Movie Decade.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movie Decade.release.xcconfig"; path = "Target Support Files/Pods-Movie Decade/Pods-Movie Decade.release.xcconfig"; sourceTree = "<group>"; };
 		7B48FC09E0772B029FC7C248 /* Pods-Movie Decade.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movie Decade.debug.xcconfig"; path = "Target Support Files/Pods-Movie Decade/Pods-Movie Decade.debug.xcconfig"; sourceTree = "<group>"; };
 		D804C1C1F11C6BC035A2BC9B /* Pods_Movie_Decade.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Movie_Decade.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +128,7 @@
 		5E09BA702350A31500724E72 /* Movie Decade */ = {
 			isa = PBXGroup;
 			children = (
+				5E09BAC023525AC100724E72 /* Bridging-Header.h */,
 				5E09BA7F2350A31800724E72 /* Info.plist */,
 				5E09BA932350B4BB00724E72 /* Model */,
 				5E09BA942350B4C100724E72 /* View */,
@@ -160,7 +164,7 @@
 				5E09BA7A2350A31800724E72 /* Assets.xcassets */,
 				5E09BA7C2350A31800724E72 /* LaunchScreen.storyboard */,
 				5E09BA772350A31500724E72 /* Main.storyboard */,
-				5E09BABC23524AD800724E72 /* ImagesTopCollectionReusableView.swift */,
+				5E09BAC123525DD500724E72 /* UICollectionView Cell+Header */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -214,6 +218,15 @@
 				5E09BAB72352256700724E72 /* ImageUrl.swift */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		5E09BAC123525DD500724E72 /* UICollectionView Cell+Header */ = {
+			isa = PBXGroup;
+			children = (
+				5E09BABC23524AD800724E72 /* ImagesTopCollectionReusableView.swift */,
+				5E09BABE23525A2300724E72 /* ImagesCell.swift */,
+			);
+			path = "UICollectionView Cell+Header";
 			sourceTree = "<group>";
 		};
 		C942B527C9277EBD141B56DC /* Frameworks */ = {
@@ -382,6 +395,7 @@
 				5E09BA9F2350D3F500724E72 /* VCExtension.swift in Sources */,
 				5E09BA762350A31500724E72 /* DetailViewController.swift in Sources */,
 				5E09BA742350A31500724E72 /* MasterViewController.swift in Sources */,
+				5E09BABF23525A2300724E72 /* ImagesCell.swift in Sources */,
 				5E09BABD23524AD800724E72 /* ImagesTopCollectionReusableView.swift in Sources */,
 				5E09BAB82352256700724E72 /* ImageUrl.swift in Sources */,
 				5E09BA972350B59900724E72 /* Movie.swift in Sources */,
@@ -559,6 +573,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.el3ankaboot.Movie-Decade";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./Movie Decade/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -579,6 +594,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.el3ankaboot.Movie-Decade";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./Movie Decade/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

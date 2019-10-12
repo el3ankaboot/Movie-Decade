@@ -6,4 +6,5 @@ target 'Movie Decade' do
    pod 'ASHorizontalScrollView', '~> 1.5.2'
    pod 'SwiftyJSON', '~> 4.0'
    pod 'Alamofire', '~> 4.8'
+   pod 'Shimmer'
 end
