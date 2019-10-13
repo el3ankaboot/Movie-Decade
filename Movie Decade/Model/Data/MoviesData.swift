@@ -35,7 +35,7 @@ class MoviesData {
                     }
                     else {
                         //Create a new key with the year and add the movie.
-                        var yearsMovies = [Movie]()
+                        var yearsMovies : [Movie] = []
                         yearsMovies.append(movie)
                         yearDict[year] = yearsMovies
                     }
@@ -53,7 +53,7 @@ class MoviesData {
         var start = 0
         var end = array.count - 1
         var myIndex = -1
-        while start < end {
+        while start <= end {
             let index = (start + end)/2
             if(array[index].rating < movie.rating) {
                 start = index+1
@@ -68,7 +68,7 @@ class MoviesData {
         }//Closing of while loop
         
         if (myIndex == -1){
-            myIndex = start+1
+            myIndex = start
         }
         var newArray = array
         newArray.insert(movie, at: myIndex)
