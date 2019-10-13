@@ -7,4 +7,7 @@ target 'Movie Decade' do
    pod 'SwiftyJSON', '~> 4.0'
    pod 'Alamofire', '~> 4.8'
    pod 'Shimmer'
+     target 'Movie DecadeTests' do
+     inherit! :complete
+  end
 end

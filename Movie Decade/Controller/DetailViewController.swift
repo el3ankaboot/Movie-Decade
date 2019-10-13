@@ -87,7 +87,7 @@ extension DetailViewController {
     func configure(view: UIView , source: [String]?){
         //Setting size of the horizontal scroll view
         let horizontalScrollView:ASHorizontalScrollView = ASHorizontalScrollView(frame:CGRect(x: 0, y: 0, width: view.frame.size.width, height: heightOfGenreCast))
-        horizontalScrollView.defaultMarginSettings = MarginSettings(leftMargin: 0, miniMarginBetweenItems: 2, miniAppearWidthOfLastItem: 20)
+        horizontalScrollView.defaultMarginSettings = MarginSettings(leftMargin: 0, miniMarginBetweenItems: 10, miniAppearWidthOfLastItem: 50)
         horizontalScrollView.uniformItemSize = CGSize(width: 100, height: heightOfGenreCast)
         horizontalScrollView.setItemsMarginOnce()
         

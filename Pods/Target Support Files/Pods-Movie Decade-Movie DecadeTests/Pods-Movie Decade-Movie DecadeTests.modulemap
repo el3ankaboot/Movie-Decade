@@ -1,0 +1,6 @@
+framework module Pods_Movie_Decade_Movie_DecadeTests {
+  umbrella header "Pods-Movie Decade-Movie DecadeTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

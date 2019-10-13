@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 struct Response : Codable {
     struct Movie: Codable {
         var title: String
