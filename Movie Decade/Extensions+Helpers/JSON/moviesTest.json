@@ -1,0 +1,149 @@
+{
+    "movies": [
+          {
+              "title": "12 years a slave",
+              "year": 2013,
+              "cast": [
+                  "Chiwetel Ejiofor",
+                  "Michael Kenneth",
+                  "Dwight Henry",
+                  "Ashley Dyke"
+              ],
+              "genres": [
+                  "Drama",
+                  "History",
+                  "Biography"
+              ],
+              "rating": 5
+          },
+          {
+              "title": "Movie 1",
+              "year": 2013,
+              "cast": [
+                  "Actor",
+                  "Actress"
+              ],
+              "genres": [
+                  "Action",
+                  "Drama"
+              ],
+              "rating": 5
+          },
+          {
+              "title": "13 years a slave",
+              "year": 2014,
+              "cast": [
+                  "Chiwetel Ejiofor",
+                  "Michael Kenneth",
+                  "Dwight Henry",
+                  "Ashley Dyke"
+              ],
+              "genres": [
+                  "Drama",
+                  "History",
+                  "Biography"
+              ],
+              "rating": 4
+          },
+          {
+              "title": "4 rated movie",
+              "year": 2013,
+              "cast": [
+                  "Actor"
+              ],
+              "genres": [
+                  "Comedy"
+              ],
+              "rating": 4
+          },
+          {
+              "title": "2012",
+              "year": 2012,
+              "cast": [
+                  "Actor"
+              ],
+              "genres": [
+                  "Comedy"
+              ],
+              "rating": 4
+          },
+          {
+              "title": "movie 2011",
+              "year": 2011,
+              "genres": [
+                  "Comedy"
+              ],
+              "rating": 4
+          },
+          {
+              "title": "movie 2013",
+              "year": 2013,
+              "cast": [
+                  "Actor"
+              ],
+              "rating": 4
+          },
+          {
+              "title": "movie 2013 rate 3",
+              "year": 2013,
+              "cast": [
+                  "Actor",
+                  "Another Actor"
+              ],
+              "genres": [
+                  "Comedy"
+              ],
+              "rating": 3
+          },
+          {
+              "title": "movie 2012 rate 3",
+              "year": 2012,
+              "cast": [
+                  "Actor",
+                  "Another Actor"
+              ],
+              "genres": [
+                  "Comedy"
+              ],
+              "rating": 3
+          },
+          {
+              "title": "Best 2012",
+              "year": 2012,
+              "cast": [
+                  "Actor",
+                  "Another Actor"
+              ],
+              "genres": [
+                  "Fiction"
+              ],
+              "rating": 5
+          },
+          {
+              "title": "Interstellar",
+              "year": 2013,
+              "cast": [
+                  "Matthew McConaughey",
+                  "Anne Hathway"
+              ],
+              "genres": [
+                  "Science"
+              ],
+              "rating": 5
+          },
+          {
+              "title": "The Interstellar",
+              "year": 2013,
+              "cast": [
+                  "Matthew McConaughey",
+                  "Anne Hathway"
+              ],
+              "genres": [
+                  "Science"
+              ],
+              "rating": 5
+          }
+
+
+     ]
+}

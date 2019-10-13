@@ -14,9 +14,7 @@ class MasterViewController: UITableViewController {
 
     //MARK:- Instance Variables
     var detailViewController: DetailViewController? = nil
-    var moviesArray = [Movie]()
-    var moviesSearched = [Movie]()
-    var yearDict = [Int:[Movie]]()
+    var data : MoviesData!
     var searchBar : UISearchBar!
     var search = false
 
@@ -26,9 +24,9 @@ class MasterViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Movies"
-
+        
         //Loading the data from json into moviesArray and yearDict
-        loadData()
+        data = MoviesData(resourceName: "movies")
         //Creating a search bar and adding it to the view
         setupSearchBar()
         //Setting the view of the table
@@ -48,7 +46,7 @@ class MasterViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let movie = (search) ? moviesSearched[indexPath.row] : moviesArray[indexPath.row]
+                let movie = (search) ? data.moviesSearched[indexPath.row] : data.moviesArray[indexPath.row]
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
                 controller.movie = movie
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
@@ -72,14 +70,14 @@ extension MasterViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(search){
-            return moviesSearched.count
+            return data.moviesSearched.count
         }
-        else {return moviesArray.count}
+        else {return data.moviesArray.count}
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let movie = (search) ? moviesSearched[indexPath.row] : moviesArray[indexPath.row]
+        let movie = (search) ? data.moviesSearched[indexPath.row] : data.moviesArray[indexPath.row]
         cell.textLabel!.text = movie.title
         cell.textLabel?.font = UIFont(name:"Nunito-Bold", size: 18)
         cell.textLabel?.adjustsFontSizeToFitWidth = true
@@ -104,7 +102,7 @@ extension MasterViewController {
     
     //Scroll to bottom of the table
     @objc func scrollToBottom(){
-            let indexPath = IndexPath(row: self.moviesArray.count-1, section: 0)
+            let indexPath = IndexPath(row: data.moviesArray.count-1, section: 0)
             self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
 }
@@ -153,12 +151,11 @@ extension MasterViewController : UISearchBarDelegate {
         searchBar.resignFirstResponder()
     }
     
-    //MARK: Perform Search
+    //Handle Search
     func handleSearch(_ year:Int) {
         searchBar.resignFirstResponder()
-        
-        moviesSearched = yearDict[year] ?? []
-        if (moviesSearched.count > 0){
+        data.handleSearch(year)
+        if (data.moviesSearched.count > 0){
             search = true
             tableView.reloadData()
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Show All Movies", style: .plain, target: self, action: #selector(showAllMovies))
@@ -168,6 +165,7 @@ extension MasterViewController : UISearchBarDelegate {
             showAlert(title: "No movies found.", message: "No movies found for the year \(year)")
         }
     }
+    
     //Checking if the year is a valid year
     func isValidYear(year:Int)->Bool {
         if (year >= 2009 && year < 2019) {return true}
@@ -183,66 +181,6 @@ extension MasterViewController : UISearchBarDelegate {
     }
     
 }
-//MARK:- Function to load the json data
-extension MasterViewController {
-    func loadData() {
-        if let path = Bundle.main.path(forResource: "movies", ofType: "json") {
-            do {
-                let jsonData = try Data(contentsOf: URL(fileURLWithPath: path))
-                let response = try JSONDecoder().decode(Response.self, from: jsonData)
-                //Add data to the movies Array and reload the tableview to show the data
-                self.moviesArray = response.movies
-                self.tableView.reloadData()
-                //Add data to the dictionary to ease the search operation.
-                for movie in moviesArray {
-                    let year = movie.year
-                    if(yearDict.keys.contains(year)) {
-                        //Insert the movie sorted by its rating.
-                        let yearsMovies = yearDict[year]
-                        insertMovieSorted(movie: movie, array: yearsMovies ?? [], year: year)
-                    }
-                    else {
-                        //Create a new key with the year and add the movie.
-                        var yearsMovies = [Movie]()
-                        yearsMovies.append(movie)
-                        yearDict[year] = yearsMovies
-                    }
-                }
-            } catch {
-                print(error)
-            }
-        }//Closing of if let
-    }//Closing of loadData func
-    
-    //Inserting sorted in Movies Array
-    func insertMovieSorted(movie: Movie, array: [Movie] ,year:Int) {
-        var start = 0
-        var end = array.count - 1
-        var myIndex = -1
-        while start < end {
-            let index = (start + end)/2
-            if(array[index].rating < movie.rating) {
-                start = index+1
-            }
-            else if (array[index].rating > movie.rating) {
-                end = index - 1
-            }
-            else {
-                myIndex = index
-                break
-            }
-        }//Closing of while loop
-        
-        if (myIndex == -1){
-            myIndex = start
-        }
-        var newArray = array
-        newArray.insert(movie, at: myIndex)
-        if(newArray.count > 5) {
-            newArray.removeFirst()
-        }
-        yearDict[year] = newArray
-    }//Closing of sorted insertion func
-}//Closing of extension
+
 
 
