@@ -23,7 +23,7 @@ class MoviesData {
             do {
                 let jsonData = try Data(contentsOf: URL(fileURLWithPath: path))
                 let response = try JSONDecoder().decode(Response.self, from: jsonData)
-                //Add data to the movies Array and reload the tableview to show the data
+                //Add data to the movies Array
                 self.moviesArray = response.movies
                 //Add data to the dictionary to ease the search operation.
                 for movie in moviesArray {
@@ -31,7 +31,7 @@ class MoviesData {
                     if(yearDict.keys.contains(year)) {
                         //Insert the movie sorted by its rating.
                         let yearsMovies = yearDict[year]
-                        insertMovieSorted(movie: movie, array: yearsMovies ?? [], year: year)
+                        insertMovieSorted(movie: movie, array: yearsMovies ?? [])
                     }
                     else {
                         //Create a new key with the year and add the movie.
@@ -46,8 +46,9 @@ class MoviesData {
         }//Closing of if let
     }//Closing of loadData func
     
-    //Inserting sorted in Movies Array
-    func insertMovieSorted(movie: Movie, array: [Movie] ,year:Int) {
+    //MARK:- nserting sorted in Movies Array
+    func insertMovieSorted(movie: Movie, array: [Movie]) {
+        let year = movie.year
         var start = 0
         var end = array.count - 1
         var myIndex = -1
