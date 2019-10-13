@@ -46,8 +46,9 @@ class MoviesData {
         }//Closing of if let
     }//Closing of loadData func
     
-    //MARK:- nserting sorted in Movies Array
+    //MARK:- Inserting sorted in Movies Array
     func insertMovieSorted(movie: Movie, array: [Movie]) {
+        if(array.count == 5 && movie.rating<array[0].rating){return}
         let year = movie.year
         var start = 0
         var end = array.count - 1
@@ -67,7 +68,7 @@ class MoviesData {
         }//Closing of while loop
         
         if (myIndex == -1){
-            myIndex = start
+            myIndex = start+1
         }
         var newArray = array
         newArray.insert(movie, at: myIndex)

@@ -49,9 +49,11 @@ class MoviesSearchSortTests: XCTestCase {
         for movie in data.moviesSearched {
             if(movie.rating == 5){countOf5+=1}
             if(movie.rating == 4){countOf4+=1}
+            
         }
-        XCTAssertEqual(countOf5, 4)
-        XCTAssertEqual(countOf4, 1)
+        XCTAssertEqual(countOf5, 3)
+        XCTAssertEqual(countOf4, 2)
+        
     }
     
 

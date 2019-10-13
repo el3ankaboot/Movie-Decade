@@ -13,6 +13,7 @@ import SwiftyJSON
 class FlickrClient {
     static let apiKey = "3e7eeb4c8932f66add6ddb8a08ca63aa"
     static let secret = "798bb5c5a6b7e6da"
+    static let imageCache = NSCache<NSString, UIImage>()
     
     enum Endpoints {
         static let baseURL = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(apiKey)"
@@ -80,18 +81,27 @@ class FlickrClient {
         guard let imageUrlString = imageUrlString else {
             return
         }
-        let imageURL = URL(string: imageUrlString.getURL())
-        DispatchQueue.global().async {() in
-            if let data = try? Data(contentsOf: imageURL!) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        cell.imageView.image = image
-                        cell.shimmer.isShimmering = false
-                        
+        if let imageInCache = imageCache.object(forKey: imageUrlString.getURL() as NSString) {
+            DispatchQueue.main.async {
+                cell.imageView.image = imageInCache
+                cell.shimmer?.isShimmering = false
+            }
+        }
+        else {
+            let imageURL = URL(string: imageUrlString.getURL())
+            DispatchQueue.global().async {() in
+                if let data = try? Data(contentsOf: imageURL!) {
+                    if let image = UIImage(data: data) {
+                        imageCache.setObject(image, forKey: imageUrlString.getURL() as NSString)
+                        DispatchQueue.main.async {
+                            cell.imageView.image = image
+                            cell.shimmer.isShimmering = false
+                            
+                        }
                     }
                 }
             }
+            
         }
-        
     }
 }

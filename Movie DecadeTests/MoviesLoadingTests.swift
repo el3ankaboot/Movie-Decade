@@ -27,7 +27,7 @@ class MovieLoadingTests: XCTestCase {
         let firstMovie = data.moviesArray[0]
         XCTAssertEqual(firstMovie.title , "12 years a slave")
         XCTAssertEqual(firstMovie.year , 2013)
-        XCTAssertEqual(firstMovie.rating , 5)
+        XCTAssertEqual(firstMovie.rating , 1)
         XCTAssertEqual(firstMovie.cast?.count , 4)
         XCTAssertEqual(firstMovie.genres?.count , 3 )
     }
