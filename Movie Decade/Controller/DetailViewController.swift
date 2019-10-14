@@ -99,8 +99,11 @@ extension DetailViewController {
             toAdd.layer.cornerRadius = 8
             toAdd.setTitle(element, for: .normal)
             toAdd.setTitleColor(UIColor.white, for: .normal)
-            toAdd.titleLabel?.font =  UIFont(name: "Nunito-SemiBold" , size: 18)
+            toAdd.titleLabel?.font =  UIFont(name: "Nunito-SemiBold" , size: 14)
             toAdd.titleLabel?.adjustsFontSizeToFitWidth = true
+            toAdd.titleLabel?.minimumScaleFactor = 0.5
+            toAdd.titleLabel?.numberOfLines = 2
+            toAdd.titleLabel?.lineBreakMode = .byWordWrapping
             horizontalScrollView.addItem(toAdd)
         }
         //If no genres
