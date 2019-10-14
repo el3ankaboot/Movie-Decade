@@ -42,7 +42,7 @@ class MoviesSearchSortTests: XCTestCase {
     }
     
     func testTop5() {
-        //Testing tha the returned are the top 5
+        //Testing that the returned are the top 5
         data.handleSearch(2013)
         var countOf5 = 0
         var countOf4 = 0
@@ -54,6 +54,17 @@ class MoviesSearchSortTests: XCTestCase {
         XCTAssertEqual(countOf5, 3)
         XCTAssertEqual(countOf4, 2)
         
+    }
+    
+    func testTop5_2() {
+        //another test that the returned are the top 5
+        data.handleSearch(2010)
+        var countOf5 = 0
+        for movie in data.moviesSearched {
+            if(movie.rating == 5){countOf5+=1}
+            
+        }
+        XCTAssertEqual(countOf5, 5)
     }
     
 

@@ -20,7 +20,7 @@ class MovieLoadingTests: XCTestCase {
     }
     
     func testLoadCount(){
-        XCTAssertEqual(data.moviesArray.count , 12)
+        XCTAssertEqual(data.moviesArray.count , 25)
     }
     
     func testLoadedFirstMovieCorrectly(){
@@ -129,6 +129,33 @@ class MovieLoadingTests: XCTestCase {
         XCTAssertEqual(twelfthMovie.rating , 5)
         XCTAssertEqual(twelfthMovie.cast?.count , 2)
         XCTAssertEqual(twelfthMovie.genres?.count , 1)
+    }
+    
+    func test13to25LoadedCorrectly() {
+        moviesOf2010Assertions(index: 12, rate: 1)
+        moviesOf2010Assertions(index: 13, rate: 5)
+        moviesOf2010Assertions(index: 14, rate: 2)
+        moviesOf2010Assertions(index: 15, rate: 3)
+        moviesOf2010Assertions(index: 16, rate: 4)
+        moviesOf2010Assertions(index: 17, rate: 5)
+        moviesOf2010Assertions(index: 18, rate: 1)
+        moviesOf2010Assertions(index: 19, rate: 5)
+        moviesOf2010Assertions(index: 20, rate: 1)
+        moviesOf2010Assertions(index: 21, rate: 4)
+        moviesOf2010Assertions(index: 22, rate: 5)
+        moviesOf2010Assertions(index: 23, rate: 4)
+        moviesOf2010Assertions(index: 24, rate: 5)
+        
+        
+    }
+    
+    func moviesOf2010Assertions(index:Int, rate:Int){
+        let movie = data.moviesArray[index]
+        XCTAssertEqual(movie.title, "2010rate\(rate)")
+        XCTAssertEqual(movie.year , 2010)
+        XCTAssertEqual(movie.rating , rate)
+        XCTAssertEqual(movie.cast?.count , 1)
+        XCTAssertEqual(movie.genres?.count , 1)
     }
     
     

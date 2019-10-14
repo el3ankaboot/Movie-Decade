@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class FlickrClient {
     static let apiKey = "3e7eeb4c8932f66add6ddb8a08ca63aa"
-    static let secret = "798bb5c5a6b7e6da"
+//    static let secret = "798bb5c5a6b7e6da"
     static let imageCache = NSCache<NSString, UIImage>()
     static let imageUrlsCache = NSCache<NSString,NSArray>()
     
@@ -35,6 +35,7 @@ class FlickrClient {
     }//Closing of enum
     
     class func getImagesURLs (movieTitle:String, completion: @escaping ([ImageUrl]? , String) -> Void){
+        //If images URLs are in cache load them from the cache, else do the network request.
         if let imagesInCache = imageUrlsCache.object(forKey: movieTitle as NSString) as? [ImageUrl] {
             completion(imagesInCache,"")
         }else {
@@ -87,6 +88,7 @@ class FlickrClient {
         guard let imageUrlString = imageUrlString else {
             return
         }
+        //If the images are in cache load them from the cache , otherwise do the network request.
         if let imageInCache = imageCache.object(forKey: imageUrlString.getURL() as NSString) {
             DispatchQueue.main.async {
                 cell.imageView.image = imageInCache
@@ -108,6 +110,6 @@ class FlickrClient {
                 }
             }
             
-        }
-    }
+        }//closing of else - not cached.
+    }//Closing of images func.
 }
