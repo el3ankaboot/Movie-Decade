@@ -35,6 +35,7 @@ class DetailViewController: UIViewController {
         startAnimating(activity)
         configureCollectionView()
         getImagesURLS()
+        
     }
 
     //MARK:- Configuring the view
@@ -43,7 +44,7 @@ class DetailViewController: UIViewController {
         headerView.movieTitle.font = UIFont(name:"Nunito-Black", size: 18)
         headerView.movieTitle.adjustsFontSizeToFitWidth = true
         headerView.movieYear.font = UIFont(name:"Nunito-Bold", size: 16)
-        headerView.movieYear.textColor = UIColor(red:0.50, green:0.00, blue:0.50, alpha:1.0)
+        headerView.movieYear.textColor = UIColor(red:0.0, green:0.00, blue:0.27, alpha:1.0)
         if let movie = movie {
             headerView.movieTitle.text = movie.title
             headerView.movieRating.rating = Double(movie.rating)
@@ -95,7 +96,7 @@ extension DetailViewController {
         let elements = source ?? []
         for element in elements{
             let toAdd = UIButton(frame: CGRect.zero)
-            toAdd.backgroundColor = UIColor(red:0.50, green:0.0, blue:0.50, alpha:1.0)
+            toAdd.backgroundColor = UIColor(red:0.0, green:0.0, blue:0.27, alpha:1.0)
             toAdd.layer.cornerRadius = 8
             toAdd.setTitle(element, for: .normal)
             toAdd.setTitleColor(UIColor.white, for: .normal)
@@ -109,7 +110,7 @@ extension DetailViewController {
         //If no genres
         if elements.count == 0 {
             let unknown = UIButton(frame: CGRect.zero)
-            unknown.backgroundColor = UIColor(red:0.50, green:0.0, blue:0.50, alpha:1.0)
+            unknown.backgroundColor = UIColor(red:0.0, green:0.0, blue:0.27, alpha:1.0)
             unknown.layer.cornerRadius = 8
             unknown.setTitle("Unknown", for: .normal)
             unknown.setTitleColor(UIColor.white, for: .normal)
