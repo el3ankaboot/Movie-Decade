@@ -17,6 +17,8 @@ class MasterViewController: UITableViewController {
     var data : MoviesData!
     var searchBar : UISearchBar!
     var search = false
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+
 
 
     //MARK:- Overriding swift funcs.
@@ -40,7 +42,7 @@ class MasterViewController: UITableViewController {
         clearsSelectionOnViewWillAppear = true
         super.viewWillAppear(animated)
         navigationItem.titleView?.tintColor = UIColor(red:0.0, green:0.00, blue:0.27, alpha:1.0)
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red:0.0, green:0.00, blue:0.27, alpha:1.0)]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: appDelegate.themeColor]
     }
  
     // MARK: - Segues
@@ -84,10 +86,10 @@ extension MasterViewController {
         cell.textLabel?.adjustsFontSizeToFitWidth = true
         if(indexPath.row % 2 == 0 ){
             cell.backgroundColor = UIColor(red:1.0, green:1.0, blue:1.0, alpha:1.0)
-            cell.textLabel?.textColor = UIColor(red:0.0, green:0.00, blue:0.27, alpha:1.0)
+            cell.textLabel?.textColor = appDelegate.themeColor
         }
         else {
-            cell.backgroundColor = UIColor(red:0.0, green:0.0, blue:0.27, alpha:0.7)
+            cell.backgroundColor = appDelegate.themeColor.withAlphaComponent(0.7)
             cell.textLabel?.textColor = UIColor(red:1.0, green:1.0, blue:1.0, alpha:1.0)
         }
         return cell
@@ -118,10 +120,10 @@ extension MasterViewController : UISearchBarDelegate {
         self.tableView.tableHeaderView = searchBar
         searchBar.keyboardType = .numberPad
         addDoneButtonOnKeyboard()
-        searchBar.barTintColor = UIColor(red:0.0, green:0.00, blue:0.27, alpha:0.9)
+        searchBar.barTintColor = appDelegate.themeColor
         var textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField
-        textFieldInsideSearchBar?.textColor = UIColor(red:0.0, green:0.00, blue:0.27, alpha:1.0)
-        textFieldInsideSearchBar?.attributedPlaceholder = NSAttributedString(string:  "Search for movie by year",attributes: [NSAttributedString.Key.foregroundColor: UIColor(red:0.0, green:0.0, blue:0.27, alpha:0.5)])
+        textFieldInsideSearchBar?.textColor = appDelegate.themeColor
+        textFieldInsideSearchBar?.attributedPlaceholder = NSAttributedString(string:  "Search for movie by year",attributes: [NSAttributedString.Key.foregroundColor: appDelegate.themeColor.withAlphaComponent(0.5)])
     }
     
     //MARK: Adding toolbar with "Search" and "Cancel" to the numberpad to search.
@@ -136,7 +138,7 @@ extension MasterViewController : UISearchBarDelegate {
         let items = [cancel, flexSpace, search]
         doneToolbar.items = items
         doneToolbar.sizeToFit()
-        doneToolbar.tintColor = UIColor(red:0.0, green:0.00, blue:0.27, alpha:1.0)
+        doneToolbar.tintColor = appDelegate.themeColor
         
         searchBar.inputAccessoryView = doneToolbar
     }
