@@ -58,7 +58,7 @@ class Movie_DecadeUITests: XCTestCase {
         
         let app = XCUIApplication()
         app.tables.cells.element(boundBy: 0).tap()
-        XCTAssertTrue(app.collectionViews.element.exists , "Didn't show movie details.")
+        XCTAssertFalse(app.collectionViews.element.exists , "Movie Details Should only be shown for those in search results.")
         
     }
     

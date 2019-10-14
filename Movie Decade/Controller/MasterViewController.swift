@@ -89,6 +89,7 @@ extension MasterViewController {
             cell.backgroundColor = UIColor(red:0.50, green:0.0, blue:0.5, alpha:0.7)
             cell.textLabel?.textColor = UIColor(red:1.0, green:1.0, blue:1.0, alpha:1.0)
         }
+        tableView.allowsSelection = (search) ? true : false
         return cell
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
