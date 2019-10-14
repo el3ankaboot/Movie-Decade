@@ -37,11 +37,19 @@
 		5E09BAB82352256700724E72 /* ImageUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E09BAB72352256700724E72 /* ImageUrl.swift */; };
 		5E09BABD23524AD800724E72 /* ImagesTopCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E09BABC23524AD800724E72 /* ImagesTopCollectionReusableView.swift */; };
 		5E09BABF23525A2300724E72 /* ImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E09BABE23525A2300724E72 /* ImagesCell.swift */; };
+		5EA773352354CD9E0036A7CE /* Movie_DecadeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA773342354CD9E0036A7CE /* Movie_DecadeUITests.swift */; };
 		5EBAFBF12354976F00D41C25 /* FlickrTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBAFBF02354976F00D41C25 /* FlickrTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		5E00CBB42353503B002DA67A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E09BA662350A31500724E72 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5E09BA6D2350A31500724E72;
+			remoteInfo = "Movie Decade";
+		};
+		5EA773372354CD9E0036A7CE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5E09BA662350A31500724E72 /* Project object */;
 			proxyType = 1;
@@ -83,6 +91,9 @@
 		5E09BABC23524AD800724E72 /* ImagesTopCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesTopCollectionReusableView.swift; sourceTree = "<group>"; };
 		5E09BABE23525A2300724E72 /* ImagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesCell.swift; sourceTree = "<group>"; };
 		5E09BAC023525AC100724E72 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		5EA773322354CD9E0036A7CE /* Movie DecadeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Movie DecadeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EA773342354CD9E0036A7CE /* Movie_DecadeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie_DecadeUITests.swift; sourceTree = "<group>"; };
+		5EA773362354CD9E0036A7CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EBAFBF02354976F00D41C25 /* FlickrTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrTest.swift; sourceTree = "<group>"; };
 		7ACEF289C9120E05EEE57A81 /* Pods-Movie Decade.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movie Decade.release.xcconfig"; path = "Target Support Files/Pods-Movie Decade/Pods-Movie Decade.release.xcconfig"; sourceTree = "<group>"; };
 		7B48FC09E0772B029FC7C248 /* Pods-Movie Decade.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movie Decade.debug.xcconfig"; path = "Target Support Files/Pods-Movie Decade/Pods-Movie Decade.debug.xcconfig"; sourceTree = "<group>"; };
@@ -106,6 +117,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EAA139B520473E0936DEC86 /* Pods_Movie_Decade.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EA7732F2354CD9E0036A7CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +167,7 @@
 			children = (
 				5E09BA702350A31500724E72 /* Movie Decade */,
 				5E00CBB02353503B002DA67A /* Movie DecadeTests */,
+				5EA773332354CD9E0036A7CE /* Movie DecadeUITests */,
 				5E09BA6F2350A31500724E72 /* Products */,
 				125CD6C66CA39E9400FAD2B9 /* Pods */,
 				C942B527C9277EBD141B56DC /* Frameworks */,
@@ -160,6 +179,7 @@
 			children = (
 				5E09BA6E2350A31500724E72 /* Movie Decade.app */,
 				5E00CBAF2353503B002DA67A /* Movie DecadeTests.xctest */,
+				5EA773322354CD9E0036A7CE /* Movie DecadeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -260,6 +280,15 @@
 			path = "UICollectionView Cell+Header";
 			sourceTree = "<group>";
 		};
+		5EA773332354CD9E0036A7CE /* Movie DecadeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5EA773342354CD9E0036A7CE /* Movie_DecadeUITests.swift */,
+				5EA773362354CD9E0036A7CE /* Info.plist */,
+			);
+			path = "Movie DecadeUITests";
+			sourceTree = "<group>";
+		};
 		C942B527C9277EBD141B56DC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -311,6 +340,24 @@
 			productReference = 5E09BA6E2350A31500724E72 /* Movie Decade.app */;
 			productType = "com.apple.product-type.application";
 		};
+		5EA773312354CD9E0036A7CE /* Movie DecadeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5EA7733B2354CD9E0036A7CE /* Build configuration list for PBXNativeTarget "Movie DecadeUITests" */;
+			buildPhases = (
+				5EA7732E2354CD9E0036A7CE /* Sources */,
+				5EA7732F2354CD9E0036A7CE /* Frameworks */,
+				5EA773302354CD9E0036A7CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5EA773382354CD9E0036A7CE /* PBXTargetDependency */,
+			);
+			name = "Movie DecadeUITests";
+			productName = "Movie DecadeUITests";
+			productReference = 5EA773322354CD9E0036A7CE /* Movie DecadeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -327,6 +374,10 @@
 					};
 					5E09BA6D2350A31500724E72 = {
 						CreatedOnToolsVersion = 10.2.1;
+					};
+					5EA773312354CD9E0036A7CE = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 5E09BA6D2350A31500724E72;
 					};
 				};
 			};
@@ -345,6 +396,7 @@
 			targets = (
 				5E09BA6D2350A31500724E72 /* Movie Decade */,
 				5E00CBAE2353503B002DA67A /* Movie DecadeTests */,
+				5EA773312354CD9E0036A7CE /* Movie DecadeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -376,6 +428,13 @@
 				5E09BAAD2350DC9900724E72 /* Nunito-Light.ttf in Resources */,
 				5E09BA792350A31500724E72 /* Main.storyboard in Resources */,
 				5E09BAAE2350DC9900724E72 /* Nunito-Medium.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EA773302354CD9E0036A7CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +550,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5EA7732E2354CD9E0036A7CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EA773352354CD9E0036A7CE /* Movie_DecadeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -498,6 +565,11 @@
 			isa = PBXTargetDependency;
 			target = 5E09BA6D2350A31500724E72 /* Movie Decade */;
 			targetProxy = 5E00CBB42353503B002DA67A /* PBXContainerItemProxy */;
+		};
+		5EA773382354CD9E0036A7CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5E09BA6D2350A31500724E72 /* Movie Decade */;
+			targetProxy = 5EA773372354CD9E0036A7CE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -729,6 +801,46 @@
 			};
 			name = Release;
 		};
+		5EA773392354CD9E0036A7CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J453HX9N2X;
+				INFOPLIST_FILE = "Movie DecadeUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.el3ankaboot.Movie-DecadeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Movie Decade";
+			};
+			name = Debug;
+		};
+		5EA7733A2354CD9E0036A7CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J453HX9N2X;
+				INFOPLIST_FILE = "Movie DecadeUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.el3ankaboot.Movie-DecadeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Movie Decade";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -755,6 +867,15 @@
 			buildConfigurations = (
 				5E09BA8E2350A31800724E72 /* Debug */,
 				5E09BA8F2350A31800724E72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5EA7733B2354CD9E0036A7CE /* Build configuration list for PBXNativeTarget "Movie DecadeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EA773392354CD9E0036A7CE /* Debug */,
+				5EA7733A2354CD9E0036A7CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
