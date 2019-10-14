@@ -59,7 +59,10 @@ class DetailViewController: UIViewController {
     
     //MARK:- Getting The Images URLs
     func getImagesURLS() {
-        FlickrClient.getImagesURLs(movieTitle: movie!.title) { (urls, err) in
+        guard let movie = movie else {
+            return
+        }
+        FlickrClient.getImagesURLs(movieTitle: movie.title) { (urls, err) in
             guard let urls = urls else {
                 self.showAlert(title: "Failed To Retrieve Images", message: "")
                 return
